@@ -5,7 +5,7 @@ local on_init = configs.on_init
 local capabilities = configs.capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "clangd"}
+local servers = { "html", "cssls", "clangd", "pyright", "rust_analyzer"}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -15,9 +15,9 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.pyright.setup({
-  on_init = on_init,
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = {"python"},
-})
+-- lspconfig.pyright.setup({
+--   on_init = on_init,
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   filetypes = {"python"},
+-- })
